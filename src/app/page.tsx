@@ -550,11 +550,13 @@ export default function Home() {
       <section className="bg-white py-10 px-4">
         <div className="flex flex-wrap justify-center items-center gap-16 max-w-6xl mx-auto">
           {logos.map((src, idx) => (
-            <img
+            <Image
               key={idx}
               src={src}
               alt={`Logo ${idx + 1}`}
               className="h-24 w-auto object-contain grayscale hover:grayscale-0 transition duration-300 cursor-pointer"
+              width={100}
+              height={100}
             />
           ))}
         </div>
@@ -583,9 +585,11 @@ export default function Home() {
 
         <div className="flex mt-6 gap-3 overflow-x-auto max-w-4xl p-2 rounded-lg scrollbar-hide">
           {images.map((src, index) => (
-            <img
+            <Image
               key={index}
               src={src}
+              width={100}
+              height={100}
               alt={`Thumbnail ${index + 1}`}
               onClick={() => handleImageClick(index)}
               className={`h-20 w-28 object-cover rounded-md cursor-pointer transition-transform duration-200 ${
