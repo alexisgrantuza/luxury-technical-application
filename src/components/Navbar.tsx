@@ -88,7 +88,7 @@ export default function Navbar() {
                 isScrolled ? "text-gray-800" : "text-white"
               }`}
             >
-              LET'S MOVE
+              LET&apos;S MOVE
             </a>
             <a
               href="#gallery"
@@ -162,7 +162,7 @@ export default function Navbar() {
                 onClick={(e) => handleNavClick(e, "services")}
                 className="text-gray-800 hover:text-blue-500 transition-colors py-2 text-lg"
               >
-                LET'S MOVE
+                LET&apos;S MOVE
               </a>
               <a
                 href="#gallery"
