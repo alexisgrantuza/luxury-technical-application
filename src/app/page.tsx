@@ -1,20 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
-import TestimonialCard from "@/components/TestimonialCard";
 import { motion } from "framer-motion";
 import {
   Select,
@@ -35,44 +25,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 // Sample property data
-const featuredProperties = [
-  {
-    id: 1,
-
-    title: "Luxury Desert Oasis",
-    address: "123 Palm Springs Dr, Pahrump, NV",
-    price: "$599,000",
-    beds: 4,
-    baths: 3,
-    sqft: 2850,
-    type: "Single Family",
-    isNew: true,
-    isFeatured: true,
-  },
-  {
-    id: 2,
-
-    title: "Modern Desert Home",
-    address: "456 Mountain View Ave, Pahrump, NV",
-    price: "$425,000",
-    beds: 3,
-    baths: 2,
-    sqft: 2100,
-    type: "Single Family",
-    isFeatured: true,
-  },
-  {
-    id: 3,
-    title: "Family Home with Yard",
-    address: "789 Green Valley Rd, Pahrump, NV",
-    price: "$375,000",
-    beds: 3,
-    baths: 2,
-    sqft: 1950,
-    type: "Single Family",
-    isNew: true,
-  },
-];
 
 const soldItems = [
   {
@@ -128,43 +80,6 @@ const testimonials = [
 ];
 
 // Gallery card items
-const galleryItems = [
-  {
-    image: "/sl1.webp  ",
-    title: "Modern Home Design",
-    description: "Contemporary living spaces with premium finishes",
-  },
-  {
-    image: "/sl2.webp",
-    title: "Mountain Views",
-    description: "Properties with stunning landscape views",
-  },
-  {
-    image: "/sl3.webp",
-    title: "Luxury Kitchens",
-    description: "Premium kitchen designs with high-end appliances",
-  },
-  {
-    image: "/sl4.webp",
-    title: "New Ownership",
-    description: "Helping clients find their perfect home",
-  },
-  {
-    image: "/sl5.webp",
-    title: "Beautiful Landscapes",
-    description: "Properties with meticulously maintained gardens",
-  },
-  {
-    image: "/sl6.webp",
-    title: "Welcoming Entry",
-    description: "First impressions that last a lifetime",
-  },
-  {
-    image: "/sl7.webp",
-    title: "Luxury Living",
-    description: "A home that feels like a luxury hotel",
-  },
-];
 
 const images = [
   "/sl1.webp",
@@ -179,7 +94,6 @@ const images = [
 const logos = ["/icon-1.webp", "/icon-2.webp", "/icon-3.webp", "/icon-4.webp"];
 
 export default function Home() {
-  const [expanded, setExpanded] = useState(false);
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
 
@@ -572,15 +486,20 @@ export default function Home() {
         </h2>
 
         <div className="relative w-full max-w-5xl rounded-2xl overflow-hidden shadow-lg">
-          <motion.img
+          <motion.div
             key={images[current]}
-            src={images[current]}
-            alt="Gallery"
             initial={{ opacity: 0.3, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="w-full h-[500px] object-cover"
-          />
+            className="w-full h-[500px] relative"
+          >
+            <Image
+              src={images[current]}
+              alt="Gallery"
+              fill
+              className="object-cover"
+            />
+          </motion.div>
         </div>
 
         <div className="flex mt-6 gap-3 overflow-x-auto max-w-4xl p-2 rounded-lg scrollbar-hide">
@@ -638,8 +557,9 @@ export default function Home() {
                 <CardContent>
                   <p className="text-gray-700 text-sm">
                     One-on-one, personalized real estate service from start to
-                    finish. We'll work together to find the home of your dreams
-                    or sell your current property at the best possible price.
+                    finish. We&apos;ll work together to find the home of your
+                    dreams or sell your current property at the best possible
+                    price.
                   </p>
                 </CardContent>
               </Card>
@@ -713,8 +633,8 @@ export default function Home() {
             CLIENT TESTIMONIALS
           </h2>
           <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what our valued clients have
-            to say about working with Marci Metzger.
+            Don&apos;t just take our word for it. Here&apos;s what our valued
+            clients have to say about working with Marci Metzger.
           </p>
 
           <div className="py-8 w-full">

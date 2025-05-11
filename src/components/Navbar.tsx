@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { smoothScroll } from "@/lib/utils";
 import Image from "next/image";
 
